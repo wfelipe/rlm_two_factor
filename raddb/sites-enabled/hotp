@@ -1,0 +1,48 @@
+server hotp {
+	authorize {
+		preprocess
+		auth_log
+		chap
+		mschap
+		suffix
+		eap
+		pap
+		update control {
+			Auth-Type := TwoFactor
+		}
+	}
+	authenticate {
+		Auth-Type TwoFactor {
+			two_factor
+			unix
+		}
+		two_factor
+		unix
+	}
+	preacct {
+		preprocess
+		acct_unique
+		suffix
+		files
+	}
+	accounting {
+		detail
+		unix
+		radutmp
+		attr_filter.accounting_response
+	}
+	session {
+		radutmp
+	}
+	post-auth {
+		exec
+		Post-Auth-Type REJECT {
+			attr_filter.access_reject
+		}
+	}
+	pre-proxy {
+	}
+	post-proxy {
+		eap
+	}
+}

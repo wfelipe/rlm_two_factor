@@ -1,0 +1,6 @@
+two_factor {
+	otpfile = "/etc/otpfile"
+	delim = ":"
+	challenge_length = 6
+	offset = 3
+}

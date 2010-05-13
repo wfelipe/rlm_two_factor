@@ -1,0 +1,7 @@
+*o
+.*
+!.gitignore
+
+# binaries
+test
+hotp-sync
