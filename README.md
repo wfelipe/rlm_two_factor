@@ -23,7 +23,7 @@ Installation
 
 Examples
 --------
-- $RADIUSDIR/etc/modules/two_factor::
+- $RADIUSDIR/etc/modules/two_factor
     two_factor {
         otpfile = "/etc/otpfile"
         delim = ":"
@@ -31,7 +31,7 @@ Examples
         offset = 3
     }
 
-- $RADIUSDIR/etc/raddb/clients.conf::
+- $RADIUSDIR/etc/raddb/clients.conf
     client localhost {
         ipaddr = 127.0.0.1
         secret = testing123
@@ -40,7 +40,7 @@ Examples
         virtual_server = hotp
     }
 
-- $RADIUSDIR/etc/raddb/sites-enabled/hotp::
+- $RADIUSDIR/etc/raddb/sites-enabled/hotp
     server hotp {
         authorize {
             ...
