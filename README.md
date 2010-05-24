@@ -1,8 +1,8 @@
 rlm_two_factor
 ==============
 
-rlm_two_factor is a `Freeradius 2`_ module, which implements one-time-password,
-`RFC 4226`_, and pass the authentication forward. How does it work?
+rlm_two_factor is a [Freeradius 2](http://freeradius.org/) module, which implements one-time-password,
+[RFC 4226](http://www.ietf.org/rfc/rfc4226.txt), and pass the authentication forward. How does it work?
 
 * on the authorize section, define an authorize type
 * on the authenticate section, under the Auth-Type defined, set two_factor and 
@@ -10,8 +10,6 @@ rlm_two_factor is a `Freeradius 2`_ module, which implements one-time-password,
 
 The password contains the challenge and the static password:
   $CHALENGE$STATIC
-
-.. contents::
 
 Building
 --------
@@ -65,6 +63,3 @@ server hotp {
 	...
 }
 </pre>
-
-.. _Freeradius 2: http://freeradius.org/
-.. _RFC 4226: http://www.ietf.org/rfc/rfc4226.txt
