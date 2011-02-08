@@ -1,5 +1,5 @@
-VERS = 2.1.8
-RADIUSDIR = /home/wfelipe/opt/freeradius-2.1.8
+VERS = 2.1.10
+RADIUSDIR = /home/wfelipe/opt/freeradius-2.1.10
 CFLAGS = -DNDEBUG -Wall -I/usr/include \
 	-I$(RADIUSDIR)/include -Wall
 LIBS = -lc -lssl

@@ -5,9 +5,13 @@
 
 #include "hotp.h"
 
-void usage()
+void usage(char *prgname)
 {
-	/* TODO */
+	printf("usage: %s\n", prgname);
+	printf("\t-s secret\n");
+	printf("\t-c challenge\n");
+	printf("\t-d digits, default 6\n");
+	printf("\t-o offset, default 3\n");
 
 	exit(1);
 }
@@ -29,22 +33,23 @@ int main(int argc, char **argv)
 		case 's':
 			secret = (unsigned char *)optarg;
 			break;
-		case 'd':
-			digits = atoi(optarg);
-			break;
 		case 'c':
 			challenge = atoi(optarg);
+			break;
+		case 'd':
+			digits = atoi(optarg);
 			break;
 		case 'o':
 			offset = atoi(optarg);
 			break;
 		default:
-			fprintf(stderr, "unknown option\n");
+			fprintf(stderr, "unknown option %c\n", opt);
+			usage(argv[0]);
 		}
 	}
 
 	if (!secret || !challenge) {
-		usage();
+		usage(argv[0]);
 	}
 
 	timestamp = time(NULL) / 60;
